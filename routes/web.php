@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\BarangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,5 +25,13 @@ Route::post('/supplier/simpan',[ SupplierController::class,'store']);
 Route::get('/supplier/edit/{id}',[SupplierController::class,'edit']);
 Route::post('/supplier/editsimpan',[ SupplierController::class,'update']);
 Route::get('/supplier/hapus/{id}',[SupplierController::class,'hapus']);
+
+
+Route::get('/barang',[ BarangController::class,'index']);
+Route::get('/barang/tambah',[ BarangController::class,'formTambah']);
+Route::post('/barang/simpan',[ BarangController::class,'store']);
+Route::get('/barang/edit/{id}',[BarangController::class,'edit']);
+Route::post('/barang/editsimpan',[ BarangController::class,'update']);
+Route::get('/barang/hapus/{id}',[BarangController::class,'hapus']);
 
 
