@@ -19,14 +19,14 @@ class SupplierController extends Controller
         $request->validate([ 
             // nama supplier tidak boleh sama dan sama yang lainnya.
             'nama_supplier' => 'unique:supplier,nama_supplier', 
-            'alamat_supplier' => 'unique:suplier,alamat_supplier',
+            'alamat_supplier' => 'unique:supplier,alamat_supplier',
             'telepon_supplier' => 'unique:supplier,telepon_supplier'
 
         ],
         [
             'nama_supplier.unique' => 'Nama tersebut sudah digunakan!',
-            'telepon_suplier.unique' => 'Kontak tersebut sudah digunakan!',
-            'alamat_suplier.unique' => 'Alamat tersebut sudah digunakan!',
+            'telepon_supplier.unique' => 'Kontak tersebut sudah digunakan!',
+            'alamat_supplier.unique' => 'Alamat tersebut sudah digunakan!',
         ]);
         try {
         $dariFunction = DB::select('SELECT newIdSupplier() AS id_supplier');
@@ -36,9 +36,9 @@ class SupplierController extends Controller
         // dd($kode_baru);
         $tambahSupplier = DB::table('supplier')->insert([
             'id_supplier' => $kode_baru,
-            'nama_supplier' => $request->input('nama'),
-            'alamat_supplier' => $request->input('alamat'),
-            'telepon_supplier' => $request->input('telepon')
+            'nama_supplier' => $request->input('nama_supplier'),
+            'alamat_supplier' => $request->input('alamat_supplier'),
+            'telepon_supplier' => $request->input('telepon_supplier')
         ]);
         if ($tambahSupplier){
 
