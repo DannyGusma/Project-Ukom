@@ -74,7 +74,8 @@ class BarangMasukController extends Controller
                 'tanggal_masuk' => $request->input('tanggal_masuk')
             ];
             DB::table('barangmasuk')->where('id_masuk', '=', $request->input('id_masuk'))->update($data);
-            return redirect('/barang/masuk');
+            return redirect('/barang
+            masuk');
 
         } catch (\Exception $e) {
             return $e->getMessage();
@@ -84,7 +85,7 @@ class BarangMasukController extends Controller
     }
     public function hapus($id=null){
         try{
-            $hapus = DB::table('barangmasuk')->where('id_masuk',$id)->delete();
+            $hapus = DB::table('barang.masuk')->where('id_masuk',$id)->delete();
             if($hapus){
 
                 return back();

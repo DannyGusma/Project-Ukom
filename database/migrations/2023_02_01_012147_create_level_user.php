@@ -13,15 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('lokasi', function (Blueprint $table) {
+        Schema::create('level_user', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            // $table->collation = 'utf8mb4_general_ci';
-            $table->char('id_lokasi',6)->primary();
-            $table->string('nama_lokasi');
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_general_ci';
+            $table->char('id_level', 4)->primary();
+            $table->string('nama_level', 20);
             $table->text('ket');
         });
     }
- 
+
     /**
      * Reverse the migrations.
      *
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lokasi');
+        Schema::dropIfExists('level_user');
     }
 };

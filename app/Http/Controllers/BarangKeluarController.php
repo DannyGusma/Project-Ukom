@@ -10,13 +10,17 @@ class BarangKeluarController extends Controller
 {
     public function index(){
         $data = DB::table('barangkeluar')->get();
+
         return view('barang.keluar.index', compact('data'));
     }    
     public function formTambah(){
-        return view('barang.keluar.tambah');
+        $data = DB::table('barangmasuk')->get();
+        return view('barang.keluar.tambah', compact('data'));
     }
-    public function store(Request $request)
+    public function store(Request $request, $id=null)
     {
+        $data = DB::table('barangmasuk')->where('id_masuk', $id)->first();
+        // dd($data->kode_barang);
         // $request->validate([ 
         //     // nama barang tidak boleh sama dan sama yang lainnya.
         //     'nama_barang' => 'unique:barang,nama_barang', 
@@ -39,14 +43,14 @@ class BarangKeluarController extends Controller
         // dd($kode_baru);
         $tambahBarangkeluar = DB::table('barangkeluar')->insert([
             // 'id_barang' => $kode_baru,
-            'id_keluar' => $request->input('id_keluar'),
-            'kode_barang' => $request->input('kode_barang'),
-            'jumlah_keluar' => $request->input('jumlah_keluar'),
-            'tanggal_keluar' => $request->input('tanggal_keluar')
+            // 'id_keluar' => $request->input('id_keluar'),
+            'kode_barang' => $data->kode_barang,
+            'jumlah_keluar' => '1',
+            'tanggal_keluar' => NOW()
         ]);
         if ($tambahBarangkeluar){
 
-            return redirect('barang.keluar');
+            return redirect('barang/keluar');
         }else
             return "input data gagal";
         } catch (\Exception $e) {
@@ -60,7 +64,7 @@ class BarangKeluarController extends Controller
     public function edit($id = null)
     {
 
-        $edit = $this->getBarangkeluar($id);
+        $edit = $this->getBarang($id);
 
         return view('barang.keluar.edit', compact('edit'));
     }
@@ -85,10 +89,10 @@ class BarangKeluarController extends Controller
     }
     public function hapus($id=null){
         try{
-            $hapus = DB::table('barang.keluar')->where('id_keluar',$id)->delete();
+            $hapus = DB::table('barangkeluar')->where('id_keluar',$id)->delete();
             if($hapus){
 
-                return back();
+                return redirect('barang/keluar');
             }
         }catch(\Exception $e){
             $e->getMessage();

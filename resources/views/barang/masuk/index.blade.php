@@ -10,7 +10,7 @@
         <thead class="text-xs text-gray-700 uppercase dark:text-gray-400">
             <tr>
                 <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
-                    Id Barang Masuk
+                    Id
                 </th>
                 <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
                     Kode Barang Masuk
