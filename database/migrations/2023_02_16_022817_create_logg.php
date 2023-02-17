@@ -13,15 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('lokasi', function (Blueprint $table) {
+        Schema::create('logg', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            // $table->collation = 'utf8mb4_general_ci';
-            $table->integer('id_lokasi',true);
-            $table->string('nama_lokasi');
-            $table->text('ket');
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_general_ci';
+            $table->integer('id_log',true);
+            $table->string('nama_barang');
+            $table->string('aktifitas');
+            $table->date('tgl');
         });
     }
- 
+
     /**
      * Reverse the migrations.
      *
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lokasi');
+        Schema::dropIfExists('logg');
     }
 };

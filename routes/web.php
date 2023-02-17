@@ -8,6 +8,9 @@ use App\Http\Controllers\BarangMasukController;
 use App\Http\Controllers\lokasiController;
 use App\Http\Controllers\LevelUserController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LoggingController;
+use App\Http\Controllers\ApprovalController;
+
 // use App\Http\Controllers\DashboardController;
 
 
@@ -39,7 +42,7 @@ Route::get('/barang',[ BarangController::class,'index']);
 
 Route::get('/barang/keluar',[ BarangKeluarController::class,'index']);
 Route::get('/barang/keluar/tambah',[ BarangKeluarController::class,'formTambah']);
-Route::post('/barang/keluar/simpan',[ BarangKeluarController::class,'store']);
+Route::post('/barang/keluar/simpan/{id}',[ BarangKeluarController::class,'store']);
 Route::get('/barang/keluar/{id}',[ BarangKeluarController::class,'store']);
 Route::get('/barang/keluar/edit/{id}',[BarangKeluarController::class,'edit']);
 Route::post('/barang/keluar/editsimpan',[ BarangKeluarController::class,'update']);
@@ -62,9 +65,7 @@ Route::get('/barang/masuk/edit/{id}',[BarangMasukController::class,'edit']);
 Route::post('/barang/masuk/editsimpan',[ BarangMasukController::class,'update']);
 Route::get('/barang/masuk/hapus/{id}',[BarangMasukController::class,'hapus']);
 
-Route::get('/levelUser\]
-
-',[ LevelUserController::class,'index']);
+Route::get('/levelUser\]',[ LevelUserController::class,'index']);
 Route::get('/levelUser/tambah',[LevelUserController::class,'formTambah'])->middleware('auth');
 Route::post('/levelUser/simpan',[LevelUserController::class,'simpan'])->middleware('auth');
 
@@ -73,4 +74,11 @@ Route::post('/login',[LoginController::class,'authenticate']);
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-// Route::get('/dashboard',[DashboardController::class,'dashboard']);
+
+Route::get('/logging',[LoggingController::class,'index']);
+
+    Route::get('/approval/BB',[ ApprovalController::class,'indexBarangBaru']);
+    Route::get('/approval/BB/search',[ ApprovalController::class,'searchindexBarangBaru']);
+    Route::get('/approval/BB/detail/{id}',[ApprovalController::class,'detailBarangBaru']);
+    Route::get('/approval/BB/setuju/{id}',[ApprovalController::class,'statusSetujuBarangBaru']);
+    Route::get('/approval/BB/tidaksetuju/{id}',[ApprovalController::class,'statusTidakSetujuBarangBaru']);

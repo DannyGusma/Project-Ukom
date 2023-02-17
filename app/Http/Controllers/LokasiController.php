@@ -21,15 +21,11 @@ class LokasiController extends Controller
 
         
         try {
+ 
 
-            $dariFunction = DB::table('lokasi')->where('id_lokasi', $id)->first();
-            $id = Arr::pluck($dariFunction, 'id_lokasi');
-
-        $tambahlokasi = DB::table('lokasi')->insert([
-            // 'id_barang' => $kode_baru,
-            // 'id_masuk' => $request->input('id_masuk'),
-            'id_lokasi' => $lokasi_baru,
+        $tambahlokasi = DB::table('lokasi')->insert([  
             'nama_lokasi' => $request->input('nama_lokasi'),
+            'ket' => $request->input('ket')
             ]);
             if($tambahlokasi){
                 

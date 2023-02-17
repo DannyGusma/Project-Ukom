@@ -7,31 +7,40 @@
 </a>
 <div class="relative overflow-y-auto shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase dark:text-gray-400">
-            <tr>
-                <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+        <tr class="text-xs text-gray-700 uppercase dark:text-gray-400">
+                <td class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
                     Id
-                </th>
-                <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+                </td>
+                <td class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+                    Nama Barang
+                </td>
+                <td class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+                    Total Barang
+                </td>
+                <td class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
                     Kode Barang Masuk
-                </th>
-                <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+                </td>
+                <td class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
                     Kode Supplier
-                </th>
-                <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+                </td>
+                <td class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
                     Tanggal Barang Masuk    
-                </th>
-                <th scope="col" class="px-20 py-8 bg-gray-50 dark:bg-gray-800">
+                </td>
+                <td class="px-20 py-8 bg-gray-50 dark:bg-gray-800">
                     Aksi
-                </th>
+                </td>
             </tr>
-        </thead>
-        <tbody>
             @foreach($data as $key)
             <tr class="border-b border-gray-200 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
                     {{$key->id_masuk}}
-                </th>
+                </td>
+                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                    {{$key->nama_barang}}
+                </td>
+                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                    {{$key->total_barang}}
+                </td>
                 <td class="px-6 py-4" >
                     {{$key->kode_barang}}
                 </td>
@@ -42,16 +51,15 @@
                     {{$key->tanggal_masuk}}
                 </td>
                 <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                    <a href="/barang/masuk/edit/{{$key->id_masuk}}">
-                        <button type="button" class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900">Edit</button>
-                    </a>
-                    <a href="/barang/masuk/hapus/{{$key->id_masuk}}">
-                    <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Hapus</button>
-                    </a>
+                         <label for="/barang/masuk/edit/{{$key->id_masuk}}" class="btn btn-sm btn-warning btn-square btn-outline">
+                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
+                    </label>
+                    <label for="/barang/masuk/hapus{{$key->id_masuk}}" class="btn btn-sm btn-error btn-square btn-outline">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                        </label>
                 </td>
             </tr>  
             @endforeach
-        </tbody>
     </table>
    
 </div>

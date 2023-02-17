@@ -7,6 +7,15 @@
     <title>MID</title>
     <link rel="" href="style.css">
     @vite('resources/css/app.css')
+    <style>
+        .is-disabled {
+            color: currentColor;
+            cursor: not-allowed;
+            opacity: 0.5;
+            pointer-events: none;
+            text-decoration: none;
+            }
+    </style>
 
 </head>
 <body>
@@ -17,6 +26,31 @@
                     <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
                         Inventaris Data
                     </span>
+    <h1 style="font-size: 20px; font-family: cursive; margin-left:550px; " id="jam"></h1>
+</center>
+</body>
+</html>
+ 
+<script type="text/javascript">
+    window.onload = function() { jam(); }
+   
+    function jam() {
+     var e = document.getElementById('jam'),
+     d = new Date(), h, m, s;
+     h = d.getHours();
+     m = set(d.getMinutes());
+     s = set(d.getSeconds());
+   
+     e.innerHTML = h +':'+ m +':'+ s;
+   
+     setTimeout('jam()', 1000);
+    }
+   
+    function set(e) {
+     e = e < 10 ? '0'+ e : e;
+     return e;
+    }
+   </script>
                 </a>
             </div>
         </nav>
@@ -28,27 +62,24 @@
                     <li>
                         <a href="/dashboard" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                         <svg aria-hidden="true" class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path></svg>
-                        <span class="ml-3">Dashboard</span>
+                        <span class="ml-3 ">Dashboard</span>
                         </a>
                     </li>
                     
                     <li class="transition group">  
-                            <button type="button" class="flex items-center p-2 w-full text-base font-normal rounded-lg hover:bg-base-200 dropdown-btn" >
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" /></svg>
-                                    <a href="/barang" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-                                    <span class="flex-1 ml-3 text-left whitespace-nowrap " sidebar-toggle-item>Barang</span>
-                                    </a>
-                                    <svg sidebar-toggle-item class="w-6 h-6 text-gray-500 group-hover:text-base-content" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                                    </a>
-                                    </button>
-                                    <ul class="py-2 space-y-2 dropdown-container">
-                                        <li>
-                                            <a href="/barang/masuk" class="flex items-center p-2 pl-11 w-full text-base font-normal rounded-lg transition duration-75 group hover:bg-base-200 ">Barang Masuk</a>
-                                            
-                                        </li>
-                                        <li>
-                                            <a href="/barang/keluar" class="flex items-center p-2 pl-11 w-full text-base font-normal rounded-lg transition duration-75 group hover:bg-base-200 ">Barang Keluar</a>
+                        <button type="button" class="flex items-center p-2 w-full text-base font-normal rounded-lg hover:bg-base-200 dropdown-btn" >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" /></svg>
+                                <a href="/barang" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                                <span class="flex-1 ml-3 text-left whitespace-nowrap " sidebar-toggle-item>Barang</span></a>
+                                <svg sidebar-toggle-item class="w-6 h-6 text-gray-500 group-hover:text-base-content" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></a>
+                        </button>
+                            <ul class="py-2 space-y-2 dropdown-container">
+                                <li>
+                                    <a href="/barang/masuk" class="flex items-center p-2 pl-11 w-full text-base font-normal rounded-lg transition duration-75 group hover:bg-base-200 ">Barang Masuk</a> 
+                                </li>
+                                <li>
+                                    <a href="/barang/keluar" class="flex items-center p-2 pl-11 w-full text-base font-normal rounded-lg transition duration-75 group hover:bg-base-200 ">Barang Keluar</a>
                                 </li>
                             </ul>
                         </li>
@@ -57,6 +88,14 @@
                         <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z"></path><path d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path></svg>
                         <span class="flex-1 ml-3 whitespace-nowrap">Lokasi Barang</span> 
                         </a>
+                    </li>
+                    <li class="transition hover:bg-base-200 border-primary rounded-sm group">
+                    <a href="/logging" class="flex items-center p-2">
+                        <svg class="w-6 h-6 text-gray-500 group-hover:text-base-content {{ request()->is('log*') ? 'text-base-content' : '' }}" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"></path>
+                            </svg>
+                            <span class="flex-1 ml-3 whitespace-nowrap">Logging</span>
+                    </a>
                     </li>
                     <li>
                         <a href="/levelUser" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
@@ -108,6 +147,7 @@
         </div>
     </footer>
 </div>
+@yield('modal')
 
 <script src="{{ asset('js/index.js') }}"></script>    
 

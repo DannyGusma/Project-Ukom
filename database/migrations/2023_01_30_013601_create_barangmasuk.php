@@ -19,10 +19,11 @@ return new class extends Migration
             $table->charset = 'utf8mb4';
             $table->collation = 'utf8mb4_general_ci';
             $table->integer('id_masuk',true);
+            $table->string('nama_barang');
+            $table->integer('total_barang');
             $table->char('kode_barang',7);
-            $table->char('id_supplier')->length(6);
-            $table->date('tanggal_masuk');
-            $table->timestamps();
+            $table->char('id_supplier',6);
+            $table->date('tanggal_masuk'); 
 
             // Foreign key untuk id_pengguna
             $table->foreign('id_supplier')->references('id_supplier')->on('supplier')->cascadeOnUpdate()->cascadeOnDelete();

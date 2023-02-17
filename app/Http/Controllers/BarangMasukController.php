@@ -42,6 +42,8 @@ class BarangMasukController extends Controller
         $tambahBarangmasuk = DB::table('barangmasuk')->insert([
             // 'id_barang' => $kode_baru,
             // 'id_masuk' => $request->input('id_masuk'),
+            'nama_barang' => $request->input('nama_barang'),
+            'total_barang' => $request->input('total_barang'),
             'kode_barang' => $kode_baru,
             'id_supplier' => $request->input('id_supplier'),
             'tanggal_masuk' => $request->input('tanggal_masuk')
@@ -65,21 +67,21 @@ class BarangMasukController extends Controller
     }
     public function update(Request $request )
     {
+        
+        // dd($data);
         try {
             // dd($request->all());
-            $data = [
-                'id_masuk'   => $request->input('id_masuk'),
-                'kode_barang' => $request->input('kode_barang'),
-                'id_supplier' => $request->input('id_supplier'),
+            $data = [ 
+                'nama_barang'   => $request->input('nama_barang'),
+                'total_barang'   => $request->input('total_barang'), 
                 'tanggal_masuk' => $request->input('tanggal_masuk')
             ];
             DB::table('barangmasuk')->where('id_masuk', '=', $request->input('id_masuk'))->update($data);
-            return redirect('/barang
-            masuk');
+            return redirect('/barang/masuk');
 
         } catch (\Exception $e) {
             return $e->getMessage();
-            dd("gagal");
+            // dd("gagal");
         }
         
     }
