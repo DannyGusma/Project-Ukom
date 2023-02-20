@@ -18,6 +18,7 @@ return new class extends Migration
             // $table->collation = 'utf8mb4_general_ci';
             $table->integer('id_lokasi',true);
             $table->string('nama_lokasi');
+            $table->char('kode_ruangan');
             $table->text('ket');
         });
     }

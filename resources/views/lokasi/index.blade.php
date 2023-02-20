@@ -4,9 +4,9 @@
     <table class="w-full text-sm text-left text-gray-900 dark:text-gray-400 ">
         <thead class="text-xs text-gray-700 uppercase dark:text-gray-400">
             <tr>
-                <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+                <!-- <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
                     Id Lokasi
-                </th>
+                </th> -->
                 <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
                     Nama Lokasi
                 </th>
@@ -19,9 +19,9 @@
             
             @foreach($data as $key)
             <tr class="border-b border-gray-200 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                <!-- <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
                     {{$key->id_lokasi}}
-                </th>
+                </th> -->
                 <td class="px-6 py-4">
                     {{$key->nama_lokasi}}
                 </td>

@@ -56,7 +56,7 @@ class LokasiController extends Controller
             DB::table('lokasi')->Where('id_supplier','=', $request->input('id_lokasi'))->update($data);
             return redirect('lokasi');
         } catch(\Exception $e) {
-            return $e->getMessege();
+            return $e->getMessage();
             dd('gagal');
         }
     }
@@ -67,7 +67,7 @@ class LokasiController extends Controller
                 return back();
             }
         }catch(\Exception $e){
-            $e->getMessege();
+            $e->getMessage();
         }
     }
 }

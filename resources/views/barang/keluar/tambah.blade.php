@@ -87,7 +87,7 @@
 <input type="checkbox" id="my-modal-4{{$key->id_masuk}}" class="modal-toggle" />
 <label for="my-modal-4{{$key->id_masuk}}" class="modal cursor-pointer">
   <label class="modal-box relative" for="">
-    <h3 class="text-lg font-bold">Congratulations random Internet user!</h3>
+    <h3 class="text-lg font-bold">Jumlah barang yang ingin keluar</h3>
     <form action="/barang/keluar/simpan/{{$key->id_masuk}}" method="POST">
         @csrf
         <div class="mb-6">
