@@ -19,7 +19,6 @@ return new class extends Migration
             $table->collation = 'utf8mb4_general_ci';
             $table->integer('id_log',true);
             $table->string('nama_barang');
-            $table->string('nama_barang');
             $table->string('aktifitas');
             $table->date('tgl');
         });
