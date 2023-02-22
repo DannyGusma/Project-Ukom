@@ -10,6 +10,7 @@ use App\Http\Controllers\LevelUserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LoggingController;
 use App\Http\Controllers\ApprovalController;
+use App\Http\Controllers\pengajuanBBController;
 
 // use App\Http\Controllers\DashboardController;
 
@@ -82,3 +83,9 @@ Route::get('/logging',[LoggingController::class,'index']);
     Route::get('/approval/BB/detail/{id}',[ApprovalController::class,'detailBarangBaru']);
     Route::get('/approval/BB/setuju/{id}',[ApprovalController::class,'statusSetujuBarangBaru']);
     Route::get('/approval/BB/tidaksetuju/{id}',[ApprovalController::class,'statusTidakSetujuBarangBaru']);
+
+
+
+Route::get('/pengajuan/barangbaru',[ pengajuanBBController::class,'index']);
+Route::get('/pengajuan/barangbaru/tambah',[ pengajuanBBController::class,'tambah']);
+Route::post('/pengajuan/barangbaru/simpan',[ pengajuanBBController::class,'store']);
