@@ -11,6 +11,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LoggingController;
 use App\Http\Controllers\ApprovalController;
 use App\Http\Controllers\pengajuanBBController;
+use App\Http\Controllers\PenggunaController;
+
 
 // use App\Http\Controllers\DashboardController;
 
@@ -89,3 +91,13 @@ Route::get('/logging',[LoggingController::class,'index']);
 Route::get('/pengajuan/barangbaru',[ pengajuanBBController::class,'index']);
 Route::get('/pengajuan/barangbaru/tambah',[ pengajuanBBController::class,'tambah']);
 Route::post('/pengajuan/barangbaru/simpan',[ pengajuanBBController::class,'store']);
+
+
+Route::get('/pengguna', [PenggunaController::class, 'index'])->middleware('auth');
+Route::group(['middleware' => ['auth', 'level:admin']], function () {
+    Route::get('/pengguna/tambah', [PenggunaController::class, 'formTambah'])->middleware('auth');
+    Route::post('/pengguna/simpan', [PenggunaController::class, 'store'])->middleware('auth');
+    Route::get('/pengguna/edit/{id}', [PenggunaController::class, 'edit'])->middleware('auth');
+    Route::post('/pengguna/edit/editsimpan', [PenggunaController::class, 'editsimpan'])->middleware('auth');
+    Route::get('/pengguna/hapus/{id}', [PenggunaController::class, 'hapus'])->middleware('auth');
+});

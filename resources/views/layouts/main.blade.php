@@ -30,22 +30,22 @@
 </center>
 </body>
 </html>
- 
+
 <script type="text/javascript">
     window.onload = function() { jam(); }
-   
+
     function jam() {
      var e = document.getElementById('jam'),
      d = new Date(), h, m, s;
      h = d.getHours();
      m = set(d.getMinutes());
      s = set(d.getSeconds());
-   
+
      e.innerHTML = h +':'+ m +':'+ s;
-   
+
      setTimeout('jam()', 1000);
     }
-   
+
     function set(e) {
      e = e < 10 ? '0'+ e : e;
      return e;
@@ -65,8 +65,8 @@
                         <span class="ml-3 ">Dashboard</span>
                         </a>
                     </li>
-                    
-                    <li class="transition group">  
+
+                    <li class="transition group">
                         <button type="button" class="flex items-center p-2 w-full text-base font-normal rounded-lg hover:bg-base-200 dropdown-btn" >
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" /></svg>
@@ -76,7 +76,7 @@
                         </button>
                             <ul class="py-2 space-y-2 dropdown-container">
                                 <li>
-                                    <a href="/barang/masuk" class="flex items-center p-2 pl-11 w-full text-base font-normal rounded-lg transition duration-75 group hover:bg-base-200 ">Barang Masuk</a> 
+                                    <a href="/barang/masuk" class="flex items-center p-2 pl-11 w-full text-base font-normal rounded-lg transition duration-75 group hover:bg-base-200 ">Barang Masuk</a>
                                 </li>
                                 <li>
                                     <a href="/barang/keluar" class="flex items-center p-2 pl-11 w-full text-base font-normal rounded-lg transition duration-75 group hover:bg-base-200 ">Barang Keluar</a>
@@ -86,7 +86,7 @@
                     <li>
                         <a href="/lokasi" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                         <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z"></path><path d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path></svg>
-                        <span class="flex-1 ml-3 whitespace-nowrap">Lokasi Barang</span> 
+                        <span class="flex-1 ml-3 whitespace-nowrap">Lokasi Barang</span>
                         </a>
                     </li>
                     <li class="transition hover:bg-base-200 border-primary rounded-sm group">
@@ -98,7 +98,7 @@
                     </a>
                     </li>
                     <li>
-                        <a href="/levelUser" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <a href="/pengguna" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                         <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
                         <span class="flex-1 ml-3 whitespace-nowrap">Pengguna</span>
                         </a>
@@ -120,12 +120,12 @@
                     </li>
                 </ul>
             </div>
-            </aside> 
+            </aside>
 
             <div>@yield('container')</div>
         </div>
 
-    
+
 <div class="mx-auto fixed bottom-0 left-0 right-0">
     <footer class="p-4 bg-white shadow md:px-6 md:py-8 dark:bg-gray-900">
         <div class="sm:flex sm:items-center sm:justify-between">
@@ -149,7 +149,7 @@
 </div>
 @yield('modal')
 
-<script src="{{ asset('js/index.js') }}"></script>    
+<script src="{{ asset('js/index.js') }}"></script>
 
 
 </body>
