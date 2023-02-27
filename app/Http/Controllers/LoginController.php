@@ -24,7 +24,7 @@ class LoginController extends Controller
         // dd($request->all());
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            //dd(Auth::user()->username);
+            // dd(Auth::user()->username); 
             $request->session()->regenerate();
            //ddd($request);
             // flash()->addSuccess('Berhasil Login');

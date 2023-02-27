@@ -13,6 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
+        
         DB::unprepared("DROP TRIGGER IF EXISTS insert_barang_keluar");
         DB::unprepared(
           "CREATE TRIGGER after_insert_barang_keluar

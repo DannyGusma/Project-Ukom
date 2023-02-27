@@ -17,7 +17,7 @@ return new class extends Migration
         // VIEW UNTUK HALAMAN PENGGUNA
         DB::unprepared(
             "CREATE OR REPLACE VIEW pengguna_admin_kepsek AS (
-             SELECT pengguna.*, level_user.nama_level, admin.nama as admin, kepsek  as kepsek
+             SELECT pengguna.*, level_user.nama_level, admin.nama as admin, kepsek.nama as kepsek
                 FROM pengguna
                 LEFT JOIN level_user
                 ON pengguna.id_level = level_user.id_level

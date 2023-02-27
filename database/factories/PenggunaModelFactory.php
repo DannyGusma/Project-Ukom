@@ -15,21 +15,11 @@ class PenggunaModelFactory extends Factory
      *
      * @return array<string, mixed>
      */
+
     public function definition()
     {
         return [
-            "id_level" => '',
-            "username" => 'admin',
-            "email" => 'admin@gmail.com',
-            "password" => Hash::make('admin'),
-            "foto" => ''
-        ];
-        return [
-            "id_level" => '',
-            "username" => 'Kepsek',
-            "email" => 'kepsek@gmail.com',
-            "password" => Hash::make('kepsek'),
-            "foto" => ''
+            
         ];
 
     }

@@ -20,7 +20,7 @@
                         {{-- <img src="{{ asset('image/aa.png') }}" class="mx-auto w-14"> --}}
                         <h1 class="text-2xl font-light my-2 ">Login</h1>
                     </div>
-                <form action="login" method="POST">
+                <form action="/login" method="POST">
                     @csrf
                     <div class="form-control">
                     <label class="label">

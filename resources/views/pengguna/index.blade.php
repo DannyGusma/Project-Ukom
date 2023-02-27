@@ -19,16 +19,14 @@
                         </div>
                     </div>
             </form>
-            @can('admin')
+        </div>
+        @can('admin')
             <a href="/pengguna/tambah">
                 <button class="btn btn-success gap-2">
                     Tambah Pengguna <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 </button>
             </a>
             @endcan
-
-        </div>
-
         <div class="gap-4 ">
             <div class="basis-4/5 mt-4 lg:mt-0">
                 {{-- DESKTOP --}}
@@ -45,10 +43,10 @@
                             </div>
                     </form>
                     @can('admin')
-                        <a href="/pengguna/tambah">
+                        <!-- <a href="/pengguna/tambah">
                             <button class="btn btn-success gap-2">
                                 Tambah Pengguna <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            </button>
+                            </button> -->
                         </a>
                     @endcan
                 </div>
@@ -113,30 +111,4 @@
     <br>
 </div>
 
-@endsection
-@section('modal')
-
-{{-- KONFIRMASI DELETE --}}
-@foreach($data as $key)
-<input type="checkbox" id="delete{{ $key->id_pengguna }}" class="modal-toggle" />
-<label for="delete{{ $key->id_pengguna }}" class="modal cursor-pointer">
-  <div class="modal-box border-t-2 border-error">
-    <svg fill="none" class="text-error w-1/4 mx-auto" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"></path>
-    </svg>
-    <div class="text-center">
-        <h3 class="font-bold text-2xl">Anda yakin ?</h3>
-        <p class="py-4 text-md">Menghapus pengguna <b>permanen</b> membuat pengguna tersebut tidak bisa lagi login</p>
-    </div>
-    <div class="flex justify-center gap-3">
-        <label for="delete{{ $key->id_pengguna }}" class="btn btn-sm btn-outline btn-info">Cancel</label>
-        <label class="btn btn-sm btn-error btn-outline">
-            <a href="/pengguna/hapus/{{$key->id_pengguna}}">
-                Delete
-            </a>
-        </label>
-    </div>
-  </div>
-</label>
-@endforeach
 @endsection
