@@ -26,7 +26,7 @@
                     <label class="label">
                         <span class="" for="email">Email</span>
                     </label>
-                    <input type="email" name="email" id="email" placeholder="email" class="input input-bordered @error('email') @enderror"  autofocus required value="{{ old ('email') }}" autocomplete="off"/>
+                    <input type="email" name="email" id="email" placeholder="Email" class="input input-bordered @error('email') @enderror"  autofocus required value="{{ old ('email') }}" autocomplete="off"/>
 
                     @error('email')
                         <span class="text-red-500">{{ $message }}</span>
@@ -37,7 +37,7 @@
                     <label class="label" for="password">
                         <span class="" name="password" id="password" required>Password</span>
                     </label>
-                    <input type="password" name="password" placeholder="password" class="input input-bordered" required/>
+                    <input type="password" name="password" placeholder="Password" class="input input-bordered" required/>
                     </div>
                     <div class="form-control mt-6 w-full">
                     <button type="submit" class="btn btn-active btn-success">Login</button>

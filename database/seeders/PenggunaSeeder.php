@@ -17,7 +17,7 @@ class PenggunaSeeder extends Seeder
     public function run()
     {
         Pengguna::factory(1)->create([
-            "id_level" => 'LU1',
+            "id_level" => 'U01',
             "username" => 'admin',
             "email" => 'admin@gmail.com',
             "password" => Hash::make('admin'),
@@ -25,7 +25,7 @@ class PenggunaSeeder extends Seeder
         ]);
 
         Pengguna::factory(1)->create([
-            "id_level" => 'LU2',
+            "id_level" => 'U02',
             "username" => 'Kepsek',
             "email" => 'kepsek@gmail.com',
             "password" => Hash::make('kepsek'),

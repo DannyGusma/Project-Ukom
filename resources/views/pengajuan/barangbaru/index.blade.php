@@ -10,12 +10,14 @@
     <table class="table w-full">
       <!-- head -->
       <thead>
-        <tr> 
+        <tr>
+          <th>No</th>
           <th>Nama Barang</th>
           <th>Harga Satuan</th>
           <th>Jumlah Barang</th>
           <th>Total Harga</th>
-
+          <th>Status</th>
+          <th>Tanggal Pengajuan</th>
 
         </tr>
       </thead>

@@ -25,8 +25,8 @@ class BarangMasukController extends Controller
     }
 
     public function formTambah(){
-        $getspr = $this->getSupplier();
-        
+        $getspr = DB::select('SELECT * FROM supplier');
+        // dd($getspr);69
         return view('barang.masuk.tambah', compact('getspr'));
     }
 
@@ -38,17 +38,27 @@ class BarangMasukController extends Controller
             $dariFunction = DB::select('SELECT newkodebarang() AS kodebarang');
             $array = Arr::pluck($dariFunction, 'kodebarang');
             $kode_baru = Arr::get($array, '0');
-
+            
+        $tambahBarangmasuk = [
+            'nama_barang' => $request->input('nama_barang'),
+            'total_barang' => $request->input('total_barang'),
+            'kode_barang' => $kode_baru,
+           // 'nama_supplier' => "test",
+            'id_supplier' => $request->input('id_supplier'),
+            'tanggal_masuk' => $request->input('tanggal_masuk')
+        ];
+        $input = DB::table('barangmasuk')->insert($tambahBarangmasuk);
+        /*
         $tambahBarangmasuk = DB::table('barangmasuk')->insert([
-            // 'id_barang' => $kode_baru,
-            // 'id_masuk' => $request->input('id_masuk'),
             'nama_barang' => $request->input('nama_barang'),
             'total_barang' => $request->input('total_barang'),
             'kode_barang' => $kode_baru,
             'id_supplier' => $request->input('id_supplier'),
             'tanggal_masuk' => $request->input('tanggal_masuk')
         ]);
-        if ($tambahBarangmasuk){
+        */
+        //dd($tambahBarangmasuk);
+        if ($input){
 
             return redirect('/barang/masuk');
         }else

@@ -26,7 +26,7 @@ return new class extends Migration
             $table->date('tanggal_masuk'); 
 
             // Foreign key untuk id_pengguna
-            $table->foreign('id_supplier')->references('id_supplier')->on('supplier')->cascadeOnUpdate()->cascadeOnDelete();
+            //$table->foreign('id_supplier')->references('id_supplier')->on('supplier')->cascadeOnUpdate()->cascadeOnDelete();
         });
     }
 

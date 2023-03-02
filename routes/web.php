@@ -13,6 +13,7 @@ use App\Http\Controllers\ApprovalController;
 use App\Http\Controllers\pengajuanBBController;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\SumberDanaController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Routing\Route as RoutingRoute;
 
 // use App\Http\Controllers\DashboardController;
@@ -30,11 +31,11 @@ use Illuminate\Routing\Route as RoutingRoute;
 |
 */
 
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
-});
+// Route::get('/dashboard', function () {
+//     return view('dashboard.index');
+// });
 
-
+Route::get('/dashboard',[ DashboardController::class,'index'])->middleware('auth');
 
 Route::get('/supplier',[ SupplierController::class,'index'])->middleware('auth');
 Route::get('/supplier/tambah',[ SupplierController::class,'formTambah'])->middleware('auth');
@@ -91,9 +92,9 @@ Route::get('/logging',[LoggingController::class,'index'])->middleware('auth');
 
 
 
-Route::get('/pengajuan/barangbaru',[ pengajuanBBController::class,'index']);
-Route::get('/pengajuan/barangbaru/tambah',[ pengajuanBBController::class,'tambah']);
-Route::post('/pengajuan/barangbaru/simpan',[ pengajuanBBController::class,'store']);
+Route::get('/pengajuan/barangbaru',[ pengajuanBBController::class,'index'])->middleware('auth');
+Route::get('/pengajuan/barangbaru/tambah',[ pengajuanBBController::class,'tambah'])->middleware('auth');
+Route::post('/pengajuan/barangbaru/simpan',[ pengajuanBBController::class,'store'])->middleware('auth');
 
 
 Route::get('/pengguna', [PenggunaController::class, 'index'])->middleware('auth');
@@ -107,6 +108,6 @@ Route::group(['middleware' => ['auth', 'level:admin']], function () {
 
 
 
-Route::get('/sb',[ SumberDanaController::class,'index']);
-Route::get('/sb/tambah',[ SumberDanaController::class,'tambah']);
-Route::post('/sb/simpan', [ SumberDanaController::class,'store']);
+Route::get('/sb',[ SumberDanaController::class,'index'])->middleware('auth');
+Route::get('/sb/tambah',[ SumberDanaController::class,'tambah'])->middleware('auth');
+Route::post('/sb/simpan', [ SumberDanaController::class,'store'])->middleware('auth');

@@ -26,7 +26,7 @@ class LevelUserSeeder extends Seeder
             ],
             [
 
-                'id_level' => 'U01',
+                'id_level' => 'U02',
                 'nama_level' => 'kepsek',
                 'ket' => 'ini kepsek',
 

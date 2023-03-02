@@ -6,7 +6,6 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-
 class SupplierSeeder extends Seeder
 {
     /**
@@ -19,25 +18,25 @@ class SupplierSeeder extends Seeder
         $supplier = collect([
             [
                 'id_supplier' => 'SPR001',
-                'nama' => 'PT Laptop Bersama',
-                'kontak' => '0856',
-                'alamat' => 'Bekasi',
+                'nama_supplier' => 'PT Laptop Bersama',
+                'alamat_supplier' => 'Bekasi',
+                'telepon_supplier' => '0856',
 
             ],
             [
 
                 'id_supplier' => 'SPR002',
-                'nama' => 'PT Headset Bersama',
-                'kontak' => '0857',
-                'alamat' => 'Bandung',
+                'nama_supplier' => 'PT Headset Bersama',
+                'alamat_supplier' => 'Bandung',
+                'telepon_supplier' => '0857',
 
             ],
             [
 
                 'id_supplier' => 'SPR003',
-                'nama' => 'PT Mouse Bersama',
-                'kontak' => '0858',
-                'alamat' => 'Bogor',
+                'nama_supplier' => 'PT Mouse Bersama',
+                'alamat_supplier' => 'Bogor',
+                'telepon_supplier' => '0858',
 
             ],
 
